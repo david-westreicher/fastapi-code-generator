@@ -292,7 +292,7 @@ class OpenAPIParser(OpenAPIModelParser):
                 )
                 default: Optional[
                     str
-                ] = f"{param_is}({'...' if field.required else repr(schema.default)}, alias='{orig_name}')"
+                ] = f"{param_is}({'...' if field.required else repr(schema.default)}, alias='{stringcase.snake_case(orig_name)}')"
         else:
             default = repr(schema.default) if schema.has_default else None
         self.imports_for_fastapi.append(field.imports)
