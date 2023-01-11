@@ -119,7 +119,7 @@ def generate_code(
     )
 
     results: Dict[Path, str] = {}
-    code_formatter = CodeFormatter(PythonVersion.PY_38, Path().resolve())
+    code_formatter = CodeFormatter(PythonVersion.PY_38, Path().resolve(), skip_string_normalization=False)
 
     template_vars: Dict[str, object] = {"info": parser.parse_info()}
     visitors: List[Visitor] = []
