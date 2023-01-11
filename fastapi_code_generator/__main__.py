@@ -171,7 +171,7 @@ def generate_code(
         print(header.format(filename=filename), file=file)
         if body:
             print('', file=file)
-            print(code_formatter.format_code(body.rstrip()), file=file)
+            print(code_formatter.format_code(body.rstrip()).rstrip(), file=file)
 
         if file is not None:
             file.close()
